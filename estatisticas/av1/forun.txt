@@ -1,0 +1,17 @@
+Pergunta:
+Gente, voces sabem me dizer se Amostra Casual Simples é a mesma coisa de Amostra Aleatória Simples??
+Me surgiu essa dúvida devido ao que tem no slide, e a pergunta feita no exercícios, as definições achei bem similares também
+
+Vou tentar de dar um exemplo pratico de cada modelo
+
+1. Amostra Aleatória Simples:
+    Primeiro é definido o tamanho da amostra de um grupo.
+    Ex.: quero uma amostra de 4 pessoas num grupo de 100 pessoas.
+    Então é feito um sorteio de 4 pessoas Aleatórias desse grupo, logo todos teem a mesma chance de serem selecionados
+
+2. Amostra Casual Simples:
+    Primeiro é definido o tamanho da amostra de um grupo.
+    Ex.: quero uma amostra de 4 pessoas num grupo de 100 pessoas.
+    Defino o meu minha primeira amostra (Digamos que seja a pessoa de número 10).
+    Defino o tamanho de um salto de pessoas (Digamos de seja um salto no valor de 15)
+    Então minha seleção ficaria nas pessoas de número 10, 25, 40 e 55.
