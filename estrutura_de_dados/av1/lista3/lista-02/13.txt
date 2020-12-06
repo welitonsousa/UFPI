@@ -1,0 +1,18 @@
+Comente o código abaixo descrevendo suas operações:
+int main(){
+ ...
+ int i;
+ int x; // total de linhas
+ int y: // tamanho de cada linha (coluna)
+ int **matriz = (int**)(malloc(x*sizeof(int*)));
+ for(i=0;i<x;i++)
+ matriz[i] = (int*)(malloc(y*sizeof(int)));
+ ...
+}
+
+A função malloc, aloca um novo tamanho de memoria para um array.
+Neste algoritmo, primeiro é definido duas variaveis inteiras para serem o tamanho de uma matriz
+e então loco em seguida, é criado um ponteiro de ponteio. Usando a lógica, para cada posição de
+um vetor, podemos ter outros vetores dentro dele, no caso, o primeiro ponteio se refere ao vetor 
+de ponteiros que esta sendo criado, e enquanto o segundo ponteio se refere a um vetor simpes, logo
+temos um vetor de vetores, ou matriz 
