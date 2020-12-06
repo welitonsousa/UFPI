@@ -6,11 +6,12 @@ ordem m x n e retorne um ponteiro para esta matriz alocada. Crie ainda uma funç
 área de memória alocada pela matriz. Finalmente, crie um novo programa(main) que teste/use as
 duas funções criadas acima. 
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 
 int **allocMatriz(int m, int n);
-void freeMemory(int **mat);
+void freeMemory(int **mat, int sizeColum);
 
 void main(){
   int **mat, m = 5, n = 5, i, j;
@@ -23,7 +24,7 @@ void main(){
     }
     printf("\n");
   }
-  freeMemory(mat);
+  freeMemory(mat, n);
 }
 
 int **allocMatriz(int m, int n){
@@ -34,6 +35,11 @@ int **allocMatriz(int m, int n){
   return mat;
 }
 
-void freeMemory(int **mat){
-  free(mat);
+void freeMemory(int **mat, int sizeColum){
+  int i;
+  for (int i = 0; i < sizeColum; i++)
+    {
+        free(mat[i]);
+    }
+    free(mat);
 }
