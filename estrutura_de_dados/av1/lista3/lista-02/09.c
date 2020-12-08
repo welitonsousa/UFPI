@@ -64,7 +64,7 @@ struct Pessoa *addDispositivos(struct Pessoa *pessoas, int *size){
       printf("Valor: ");
       scanf("%d", &pessoas[indexPessoa].dispositivo[pessoas[indexPessoa].countDispositivos].valor);
       printf("Descricao: ");
-      scanf("%s", &pessoas[indexPessoa].dispositivo[pessoas[indexPessoa].countDispositivos].descricao);
+      scanf("%s", pessoas[indexPessoa].dispositivo[pessoas[indexPessoa].countDispositivos].descricao);
       pessoas[indexPessoa].countDispositivos += 1; 
       printf("Dispositivo adicionado\n");
     }else{
