@@ -92,15 +92,18 @@ struct Pessoa *addPessoa(struct Pessoa *pessoas, int *size){
 }
 
 struct Pessoa *removePessoa(struct Pessoa *pessoas, int *size){
-  int indexPessoa;
+  int indexPessoa, i;
   if(*size > 0){
     showAllPessoas(pessoas, *size, 0);
     printf("Digite o indice da pessoa: ");
     scanf("%d", &indexPessoa);
     if(indexPessoa > 0 && indexPessoa <= *size){
       indexPessoa -= 1;
-      pessoas = (struct Pessoa *) realloc(pessoas, (indexPessoa) * sizeof(struct Pessoa));
+      for(i = indexPessoa; i < *size - 1; i++){
+        pessoas[i] = pessoas[i + 1];
+      }
       *size -= 1;
+      pessoas = (struct Pessoa *) realloc(pessoas, (*size) * sizeof(struct Pessoa));
       printf("Pessoa deletada\n");
     }else{
       printf("Indice da pessoa invalido\n");
@@ -119,7 +122,7 @@ struct Pessoa *removeDispositivo(struct Pessoa *pessoas, int *size){
       indexPessoa -= 1;
       if(pessoas[indexPessoa].countDispositivos > 0){
         for(i = 0; i < pessoas[indexPessoa].countDispositivos; i++){
-          printf("%d - Descricao: %s\nValor: %s\n", i + 1, pessoas[indexPessoa].dispositivo[i].descricao, pessoas[indexPessoa].dispositivo[i].descricao);
+          printf("%d - Descricao: %s\nValor: %d\n", i + 1, pessoas[indexPessoa].dispositivo[i].descricao, pessoas[indexPessoa].dispositivo[i].valor);
           if(i + 1 != pessoas[indexPessoa].countDispositivos){
             printf("--------------\n");
           }
@@ -129,6 +132,11 @@ struct Pessoa *removeDispositivo(struct Pessoa *pessoas, int *size){
         if(indexDispositivo > 0 && indexDispositivo <= pessoas[indexPessoa].countDispositivos){
           indexDispositivo -= 1;
           pessoas[indexPessoa].countDispositivos -= 1;
+
+          for(i = indexDispositivo; i < pessoas[indexPessoa].countDispositivos; i++){
+            pessoas[indexPessoa].dispositivo[i] = pessoas[indexPessoa].dispositivo[i + 1];
+          }
+
           pessoas[indexPessoa].dispositivo = (struct Dispositivo *) realloc(pessoas[indexPessoa].dispositivo, (pessoas[indexPessoa].countDispositivos) * sizeof(struct Dispositivo));
           printf("Dispositivo deletado\n");
         }else{

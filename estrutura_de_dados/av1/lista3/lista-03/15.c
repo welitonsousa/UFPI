@@ -3,6 +3,7 @@
 // seja, todas as sequencias passíveis de formação com os caracteres inseridos no
 // vetor. (Obs.: Não é necessário verificar a validade das palavras. Apenas exiba as
 // possibilidades.)
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
