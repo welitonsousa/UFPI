@@ -1,6 +1,6 @@
 /*
 Escreva uma estrutura para conter três membros do tipo int chamados hora, min e
-seg. Atribua o nome tempo a essa estrutura.
+seg. Atribua o nome Time a essa estrutura.
 Escreva outra estrutura para armazenar os dados de um estacionamento. Ela deve ser
 capaz de armazenar os dados da placa do carro, a marca, a hora de entrada e a hora de
 saída do estacionamento. Utilize dois membros do tipo tempo, definidos anteriormente
@@ -12,35 +12,35 @@ preencha esse vetor e em seguida imprima as informações contida nele.
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Tempo{
-  int hora, min, seg;
+struct Time{
+  int hour, minutes, seconds;
 };
-typedef struct Tempo Tempo;
+typedef struct Time Time;
 
-struct Estacionamento{
-  char placa[10];
-  char marca[20];
-  Tempo entrada;
-  Tempo saida;
+struct Parking{
+  char board[10];
+  char brand[20];
+  Time input;
+  Time exit;
 };
-typedef struct Estacionamento Estacionamento;
+typedef struct Parking Parking;
 
 void main(){
 
-  Estacionamento *estacionamento;
-  estacionamento = (Estacionamento*) calloc(1, sizeof(Estacionamento));
+  Parking *parking;
+  parking = (Parking*) calloc(1, sizeof(Parking));
   
   printf("Placa: ");
-  scanf("%s", estacionamento[0].placa);
+  scanf("%s", parking[0].board);
   printf("Marca: ");
-  scanf("%s", estacionamento[0].marca);
+  scanf("%s", parking[0].brand);
   printf("Hora da entrada: ");
-  scanf("%d%d%d", &estacionamento[0].entrada.hora, &estacionamento[0].entrada.min, &estacionamento[0].entrada.seg);
+  scanf("%d:%d:%d", &parking[0].input.hour, &parking[0].input.minutes, &parking[0].input.seconds);
   printf("Hora da saida: ");
-  scanf("%d%d%d", &estacionamento[0].saida.hora, &estacionamento[0].saida.min, &estacionamento[0].saida.seg);
+  scanf("%d:%d:%d", &parking[0].exit.hour, &parking[0].exit.minutes, &parking[0].exit.seconds);
 
-  printf("\nPlaca: %s\n", estacionamento[0].placa);
-  printf("Marca: %s\n", estacionamento[0].marca);
-  printf("Hora da entrada: %d:%d:%d", estacionamento[0].entrada.hora, estacionamento[0].entrada.min, estacionamento[0].entrada.seg);
-  printf("Hora da saida: %d:%d:%d", estacionamento[0].saida.hora, estacionamento[0].saida.min, estacionamento[0].saida.seg);
+  printf("Placa: %s\n", parking[0].board);
+  printf("Marca: %s\n", parking[0].brand);
+  printf("Hora da entrada: %d:%d:%d\n", parking[0].input.hour, parking[0].input.minutes, parking[0].input.seconds);
+  printf("Hora da saida: %d:%d:%d", parking[0].exit.hour, parking[0].exit.minutes, parking[0].exit.seconds);
 }
