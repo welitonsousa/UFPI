@@ -23,4 +23,4 @@ for index in range(0, len(atividades)):
 
 print(len(atividades_diarias))
 for atividade in atividades_diarias:
-    print(atividade['nome'])   
+    print(atividade['nome'])
