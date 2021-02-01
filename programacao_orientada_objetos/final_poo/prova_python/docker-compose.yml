@@ -1,0 +1,5 @@
+version: "3"
+services:     
+    myreader:
+        ports:
+            - "5001:5001"
