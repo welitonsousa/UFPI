@@ -1,0 +1,28 @@
+// Identifique os erros no código abaixo e aponte possíveis soluções.
+
+#include <stdio.h>
+struct struct_type
+{
+    int a, b;
+    char ch;
+};
+struct struct_type2
+{
+    int a, b;
+    char ch;
+};
+
+void f1(struct_type2 parm)
+//Na linha acima, falta definit o tipo da varialvel struct_type2, que seria uma struct
+{
+    printf("%d", parm.a);
+}
+int main(void)
+{
+    struct struct_type arg;
+    arg.a = 1000;
+    f1(arg);
+    //f1 quer receber uma varialvel do tipo struct_type2, e nao struct_type
+    return 0;
+
+}

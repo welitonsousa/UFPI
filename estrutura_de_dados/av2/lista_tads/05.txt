@@ -1,5 +1,0 @@
-Em linguagens de programação o tipo de dado de uma variável, constante ou 
-função define o conjunto de valores que a variável, constante ou função podem assumir
-ex.: variável boolean pode assumir valores true ou false;
-Tipos estruturado de dados, o programador pode definir novos tipos de
-dados em termos de outros já definidos

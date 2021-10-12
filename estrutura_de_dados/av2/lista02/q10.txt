@@ -1,4 +1,0 @@
-Defina o conceito de recursividade em detalhes.
-
-Recursividade é o ato de um metodo, ou uma função ter a responsabilidade de chamar a si proprioa,
- com o intuito de obter um determinado resultado, como percorrer todos os ramos de uma arvore de elementos

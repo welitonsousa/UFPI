@@ -1,0 +1,1 @@
+um output para cara caractere da string de entrada, sendo printados de forma decrescente, isto é, da ultima posição para a primeira

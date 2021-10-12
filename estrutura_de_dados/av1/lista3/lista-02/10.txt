@@ -1,9 +1,0 @@
-Quais os possíveis problemas enfrentados na execução dos sistemas operacionais quando há
-erros ou falhas de estratégia ou segurança na alocação dinâmica de memória?
-
-Nas aulas de S.O. na UFPI, aprendemos que todo programa é estatico, ou seja, ele nunca vai mudar para
-o sistema, mas os processos em si mudam, na alocação dinamica é um dos exemplos mais fortes disso.
-O Sistema operacional pode encontrar alguns problemas que ele não tinha encontrado quando gerou o 
-compilador, tais como uma memoria negativa, ou uma memoria absurda de grande. O sistema alem de cuidar 
-dos detalhes quando gera o compilador, ainda tem que tomar cuidado com as decisões do programador,
-que podem, ou não violarem as normas e politicas de S.O.

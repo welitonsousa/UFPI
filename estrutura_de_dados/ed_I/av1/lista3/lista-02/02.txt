@@ -1,0 +1,22 @@
+Explique as diferenças entre alocação estática e dinâmica, diga quais as consequências e
+benefícios da alocação dinâmica de memória, bem como de seus operadores e funções “malloc”,
+“realloc” e “free”
+
+Na alocação estática, bem como o proprio nome sugere, é uma alocação de um espaço fixo em memória,
+já na alocação dinâmica, o programador tem a liberdade de usar apenas o que precisar, como por exemplo
+uma lista de usuários, onde essa lista pode ter 1, ou 1 milhão de usuarios, que o espaço usado será 
+da quela quantidade de usuarios salvos. Na alocação estatica se o programador estiver decidido que sua 
+lista terá a capacidade de 1 milhão de usuarios, será sempre oculpado o espaço de 1 milhão de usuarios,
+independente de quantos usuarios realmente estejam salvos.
+
+Na alocação dinamica temos alguns operadores.
+mallloc: realoca o tamanho (em bits) que o vetor pode guardar
+
+calloc: faz o mesmo que o mallloc, porem ele recebe um parametro extra, para ser realizado uma multiplicação
+
+realloc: quando usamos uma das funções anteriores, ela define o numero zero para todas as 
+posições do vetor realocado, mas o realloc faz uma copia do conteudo do vetor antes de realocalo, 
+para que o vetor final tenho o novo espaçamento, e ainda perserve o conteúdo de antes
+
+free: esta função libera o espaço em memoria de um ponteiro, os valores ainda ficam la, como antes, 
+mas com um tipo de status de lixo, dizendo que todas as posilções daquele vetor, estão livres

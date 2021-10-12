@@ -1,5 +1,0 @@
-Qual a vantagem em usar alocação dinâmica em vez alocação estática?
-
-Com a alocação dinamica podemos ocupar menos memoria.
-Na alocação estatica, quando seu limite é atingido não podemos fazer muita coisa,
-enquanto na dinamica podemos almentar a memoria de acordo com que precisamos.
