@@ -11,7 +11,7 @@ typedef struct avr23 Avr23;
 int eFolha(Avr23 *raiz)
 {
     int folha = 0;
-    if (raiz->esq == NULL && raiz->cen == NULL && raiz->dir == null)
+    if (raiz->esq == NULL && raiz->cen == NULL && raiz->dir == NULL)
     {
         folha = 1;
     }
@@ -21,7 +21,7 @@ int eFolha(Avr23 *raiz)
 Avr23 *addNo(int info, Avr23 *filhoEsq, Avr23 *filhoCen)
 {
     Avr23 *no;
-    no = (Avr23 * malloc(sizeof(Avr23 *)));
+    no = (Avr23 * malloc(sizeof(Avr23)));
     no->esq = filhoEsq;
     no->cen = filhoCen;
     no->dir = NULL;
@@ -30,30 +30,52 @@ Avr23 *addNo(int info, Avr23 *filhoEsq, Avr23 *filhoCen)
     return no;
 }
 
+void quebraNo(Avr23 **no, int info, Avr23 *filhoMaior, int *sobe, Avr23 **novo)
+{
+    if (info > (*no)->info1)
+    {
+        *sobe = (*no)->info1;
+        *novo = add((*no)->info2, NULL, NULL);
+        (*no)->info1 = info;
+        (*no)->cen = filhoMaior;
+        (*no)->nInfos = 1;
+    }
+    else if (info > (*no)->info2)
+    {
+        *sobe = info;
+        *novo = add((*no)->info2, NULL, NULL);
+        (*no)->nInfos = 1;
+    }else {
+        *sobe = (*no)->info2;
+        *novo = add(info, (*no)->dir, NULL);
+
+    }
+}
+
 int add(Avr23 **pai, Avr23 **raiz, int valor)
 {
     int inseriu = 0;
     if (*raiz == NULL)
     {
-        *raiz = *addNo(valor, NULL, NULL, NULL);
+        *raiz = addNo(valor, NULL, NULL);
     }
     else if (eFolha(*raiz))
     {
         if ((**raiz).nInfos == 1)
         {
-            *raiz = addNo(*raiz, valor);
+            *raiz = addNo(*raiz, valor, NULL);
         }
         else
         {
             quebraNo(raiz, valor, no, sobe);
-            if (pau == NULL)
+            if (pai == NULL)
             {
                 Avr23 *novo;
-                novo = addNo(sobe, *raiz, *no, NULL);
+                novo = addNo(sobe, *raiz, *no);
             }
-            else if (**pai->nInfos == 1)
+            else if ((*pai)->nInfos == 1)
             {
-                addNo(pai, sobe);
+                pai = addNo(*pai, sobe, *no);
             }
         }
     }
